@@ -1,8 +1,12 @@
 import logo from "./sephorahero.jpeg";
 import "./App.css";
 import { useGeolocated } from "./geolocation";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    handleEvent();
+  }, [])();
   const {
     coords,
     getPosition,
