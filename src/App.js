@@ -27,13 +27,16 @@ function App() {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3030/home/location`, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: JSON.stringify({ longitude, latitude }),
-      });
+      const res = await fetch(
+        `https://imaginative-frangipane-e603b1.netlify.app/.netlify/functions/api/home/location`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify({ longitude, latitude }),
+        }
+      );
 
       const data = await res.json();
       console.log(data);
